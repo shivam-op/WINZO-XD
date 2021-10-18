@@ -12,25 +12,26 @@ from helpers.filters import other_filters2
 )
 async def help_(client: Client, message: Message):
      await message.reply_text(
-        f"""**𝐇𝐞𝐲,𝐈 𝐚𝐦 𝐙𝐞𝐲𝐫𝐨𝐱
-𝐈 𝐚𝐦 𝐚𝐧 𝐚𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐦𝐮𝐬𝐢𝐜 𝐛𝐨𝐭 𝐚𝐧𝐝 𝐢 𝐜𝐚𝐧 𝐩𝐥𝐚𝐲 𝐦𝐮𝐬𝐢𝐜 𝐢𝐧 𝐠𝐫𝐨𝐮𝐩 𝐯𝐨𝐢𝐜𝐞 𝐜𝐡𝐚𝐭.
-𝐈𝐟 𝐲𝐩𝐮 𝐧𝐞𝐞𝐝 𝐚𝐧𝐲 𝐡𝐞𝐥𝐩 𝐤𝐢𝐧𝐝𝐥𝐲 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐮𝐬 𝐚𝐭 𝐨𝐮𝐫 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐠𝐫𝐨𝐮𝐩**
+        f"""**Hey there! My name is ƵɆ¥ɌØӾ.✨
+I can play music in your group🎉 .
+Add me in your group and play music freely.🇮🇳**
+Our chatting group:- @Friends_Forever_143
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "❤️𝐆𝐫𝐨𝐮𝐩❤️", url="https://t.me/ELECTROBOT_SUPPORT")
+                        "🙋‍♂ Devlopers", url="https://t.me/Shivam9412")
                   ],[
                     InlineKeyboardButton(
-                        "❤️𝐂𝐡𝐚𝐧𝐧𝐞𝐥❤️", url="https://t.me/ELECTRO_UPDATES"
+                        "🔊 Channel", url="https://t.me/ELECTRO_UPDATES"
                     ),
                     InlineKeyboardButton(
-                        "𝐃𝐞𝐯𝐥𝐨𝐩𝐞𝐫𝐬", url="https://t.me/SHIVAM9412"
+                        "💬 Support", url="https://t.me/electrobot_support"
                     )    
                 ],[ 
                     InlineKeyboardButton(
-                        "𝐀𝐝𝐝 𝐦𝐞 𝐭𝐨 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/{bn}?startgroup=true"
+                        "➕ Add me to group ➕", url="https://t.me/{bn}?startgroup=true"
                     )]
             ]
         ),
