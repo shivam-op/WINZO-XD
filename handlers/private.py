@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-from config import BOT_NAME, BOT_USERNAME
+from config import BOT_NAME as bn
 from helpers.filters import other_filters2
 
 
@@ -26,7 +26,7 @@ async def start(_, message: Message):
                     )    
                 ],[ 
                     InlineKeyboardButton(
-                        "𝐀𝐝𝐝 𝐦𝐞 𝐭𝐨 𝐠𝐫𝐨𝐮𝐩", url="https://t.me/{BOT_NAME}?startgroup=true"
+                        "𝐀𝐝𝐝 𝐦𝐞 𝐭𝐨 𝐠𝐫𝐨𝐮𝐩", url="https://t.me/{bn}?startgroup=true"
                     )]
             ]
         ),
