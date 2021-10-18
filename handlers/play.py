@@ -12,7 +12,7 @@ import youtube_dl
 from youtube_search import YoutubeSearch
 import converter
 from downloaders import youtube
-from config import DURATION_LIMIT
+from config import DURATION_LIMIT, PLAYER_USERNAME
 from helpers.filters import command
 from helpers.decorators import errors
 from helpers.errors import DurationLimitError
@@ -92,7 +92,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Processing...**")
+    lel = await message.reply("🔄 **𝙋𝙧𝙤𝙘𝙘𝙚𝙨𝙨𝙞𝙣𝙜...**")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -100,7 +100,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "Camila Music"
+        user.first_name = "Camilla Music"
     usar = user
     wew = usar.id
     try:
@@ -118,18 +118,18 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "**camila Music assistant joined this group for play music 🎵**")
+                        message.chat.id, "**𝙃𝙪𝙧𝙧𝙚𝙮 𝙞 𝙟𝙤𝙞𝙣𝙚𝙙 𝙛𝙤𝙧 𝙥𝙡𝙖𝙮𝙞𝙣𝙜 𝙢𝙪𝙨𝙞𝙘 𝙞𝙣 𝙮𝙤𝙪𝙧 𝙘𝙝𝙖𝙩 🎵**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>🛑 Flood Wait Error 🛑</b> \n\Hey {user.first_name},@camilaassistant userbot couldn't join your group due to heavy join requests @warbotzsupport. Make sure userbot is not banned in group and try again later!")
+                        f"<b>🛑 Flood Wait Error 🛑</b> \n\Hey {user.first_name},@{PLAYER_USERNAME} userbot couldn't join your group due to heavy join requests @warbotzsupport. Make sure userbot is not banned in group and try again later!")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>Hey {user.first_name}, @camilaassistant userbot is not in this chat, ask admin to send /play command for first time to add it.</i>")
+            f"<i>Hey {user.first_name}, @{PLAYER_USERNAME}  userbot is not in this chat, ask admin to send /play command for first time to add it.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
@@ -143,7 +143,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/5b2ed5398e7cc024c8838.jpg"
+        thumb_name = "https://telegra.ph/file/e7f13a1e796554fba1fe2.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -153,7 +153,7 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                         text="Channel 🔊",
-                        url="https://t.me/warbotz")
+                        url="https://t.me/electro_updates")
                    
                 ]
             ]
@@ -187,33 +187,32 @@ async def play(_, message: Message):
                 secmul *= 60
                 
             keyboard = InlineKeyboardMarkup(
+                            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            text="YouTube 🎬",
-                            url=f"{url}"),
-                        InlineKeyboardButton(
-                            text="Download 📥",
-                            url=f"{durl}")
-
-                    ]
-                ]
-            )
+                    InlineKeyboardButton(
+                        "𝐂𝐇𝐀𝐍𝐍𝐄𝐋🇮🇳", url="https://t.me/ELECTRO_UPDATES")
+                  ],[ 
+                    InlineKeyboardButton(
+                        "𝐆𝐑𝐎𝐔𝐏", url="https://t.me/ELECTROBOT_UPDATES"
+                    )]
+            ]
+        )
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/5b2ed5398e7cc024c8838.jpg"
+            thumb_name = "https://telegra.ph/file/e7f13a1e796554fba1fe2.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="YouTube 🎬",
-                                url=f"https://youtube.com")
-
-                        ]
-                    ]
-                )
+                            [
+                [
+                    InlineKeyboardButton(
+                        "GROUP🇮🇳", url="https://t.me/ELECTROBOT_SUPPORT")
+                  ],[ 
+                    InlineKeyboardButton(
+                        "CHANNEL", url="https://t.me/ELECTRO_UPDATES"
+                    )]
+            ]
+        )
         if (dur / 60) > DURATION_LIMIT:
              await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
              return
@@ -222,11 +221,11 @@ async def play(_, message: Message):
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
-            return await lel.edit("🧐 **What's the song you want to play?**")
-        await lel.edit("🔎 **Finding the song...**")
+            return await lel.edit("🧐 **𝙒𝙝𝙞𝙘𝙝 𝙨𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙣𝙖 𝙥𝙡𝙖𝙮??**")
+        await lel.edit("🔎 **𝙎𝙚𝙖𝙧𝙘𝙝𝙞𝙣𝙜 𝙮𝙤𝙪𝙧 𝙨𝙤𝙣𝙜...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🎵 **Processing sounds...**")
+        await lel.edit("🎵 **𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜 𝙨𝙤𝙪𝙣𝙙𝙨...**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
