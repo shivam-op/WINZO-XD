@@ -5,7 +5,11 @@ from config import BOT_NAME as bn
 from helpers.filters import other_filters2
 
 
-@Client.on_message(other_filters2)
+@Client.on_message(
+    filters.command("help")
+    & filters.private
+    & ~ filters.edited
+)
 async def start(_, message: Message):
      await message.reply_text(
         f"""**𝐇𝐞𝐲,𝐈 𝐚𝐦 𝐙𝐞𝐲𝐫𝐨𝐱
