@@ -1,3 +1,4 @@
+
 import os
 import aiohttp
 import asyncio
@@ -6,8 +7,8 @@ import sys
 import time
 from youtubesearchpython import SearchVideos
 from pyrogram import filters, Client
-from youtube_dl import YoutubeDL
-from youtube_dl.utils import (
+from yt_dlp import YoutubeDL
+from yt_dlp.utils import (
     ContentTooShortError,
     DownloadError,
     ExtractorError,
@@ -20,11 +21,11 @@ from youtube_dl.utils import (
 
 @Client.on_message(filters.command("song") & ~filters.edited)
 async def song(client, message):
-    cap = "@warbotz"
+    cap = " @BONDOFBESTIZZ 💡"
     url = message.text.split(None, 1)[1]
-    rkp = await message.reply("Processing...")
+    rkp = await message.reply("𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜...𝙃𝙤𝙡𝙙 𝙊𝙣")
     if not url:
-        await rkp.edit("**What's the song you want?**\nUsage`/song <song name>`")
+        await rkp.edit("**𝙒𝙝𝙞𝙘𝙝 𝙎𝙤𝙣𝙜 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 ??**\n𝙐𝙨𝙖𝙜𝙚`/song <song name>`")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
@@ -32,7 +33,7 @@ async def song(client, message):
     try:
         url = q[0]["link"]
     except BaseException:
-        return await rkp.edit("Failed to find that song.")
+        return await rkp.edit("𝙁𝙖𝙞𝙡𝙚𝙙 𝙩𝙤 𝙛𝙞𝙣𝙙 𝙩𝙝𝙖𝙩 𝙨𝙤𝙣𝙜.")
     type = "audio"
     if type == "audio":
         opts = {
@@ -56,7 +57,7 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("Downloading...")
+        await rkp.edit("𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜...𝙃𝙤𝙡𝙙 𝙊𝙣")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
@@ -90,7 +91,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #blaze
+        await rkp.edit("𝙐𝙥𝙡𝙤𝙖𝙙𝙞𝙣𝙜...𝙃𝙤𝙡𝙙 𝙊𝙣") #ImJanindu
         lol = "./etc/thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
@@ -98,5 +99,5 @@ async def song(client, message):
                  title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
-                 caption=cap)  #JEcode
+                 caption=cap)  #BONDOFBESTIZZ
         await rkp.delete()
