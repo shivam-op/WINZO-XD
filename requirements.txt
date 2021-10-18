@@ -14,3 +14,4 @@ search_engine_parser
 ffmpeg
 Pillow
 ujson
+wget
