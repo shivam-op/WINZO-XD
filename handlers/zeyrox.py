@@ -22,7 +22,7 @@ from callsmusic import pytgcalls
 import callsmusic 
 from converter import convert
 from downloaders import youtube
-import callsmusic import queues
+from callsmusic import queues
 from config import DURATION_LIMIT
 from helpers.decorators import errors, admins_only
 from helpers.errors import DurationLimitError
