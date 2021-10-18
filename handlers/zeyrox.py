@@ -87,7 +87,7 @@ async def play(client: Client, message_: Message):
         photo="https://telegra.ph/file/fe07b15733ed56f103cb4.jpg",
         caption=f"Playing Your song Via Devil music bot.",
          ) 
-        tgcalls.pytgcalls.join_group_call(message_.chat.id, file_path)
+        callsmusic.pytgcalls.join_group_call(message_.chat.id, file_path)
 
 @Client.on_message(
     filters.command("deezer")
