@@ -19,7 +19,7 @@ async def start(_, message: Message):
                         "𝐆𝐫𝐨𝐮𝐩", url="https://t.me/ELECTROBOT_SUPPORT")
                   ],[
                     InlineKeyboardButton(
-                        "𝐂𝐡𝐚𝐧𝐧𝐞𝐥, url="https://t.me/ELECTRO_UPDATES"
+                        "𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/ELECTRO_UPDATES"
                     ),
                     InlineKeyboardButton(
                         "𝐁𝐨𝐭 𝐥𝐢𝐬𝐭", url="https://t.me/bondofbestizz"
