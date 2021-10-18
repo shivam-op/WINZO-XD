@@ -254,18 +254,16 @@ async def play(_, message: Message):
             return
 
         keyboard = InlineKeyboardMarkup(
+                            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            text="YouTube 🎬",
-                            url=f"{url}"),
-                        InlineKeyboardButton(
-                            text="Download 📥",
-                            url=f"{durl}")
-
-                    ]
-                ]
-            )
+                    InlineKeyboardButton(
+                        "GROUP🇮🇳", url="https://t.me/ELECTROBOT_SUPPORT")
+                  ],[ 
+                    InlineKeyboardButton(
+                        "CHANNEL", url="https://t.me/ELECTRO_UPDATES"
+                    )]
+            ]
+        )
         
         if (dur / 60) > DURATION_LIMIT:
              await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
