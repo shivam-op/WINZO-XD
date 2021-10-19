@@ -202,8 +202,8 @@ async def play(_, message: Message):
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="My Group",
-                        url=f"t.me/WINZOGOLDFINEL")
+                        text="⚡️ My Group",
+                        url=f"t.me/WINZOGOLD7773")
 
                 ]                             
             ]
@@ -229,8 +229,8 @@ async def play(_, message: Message):
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="My Group",
-                        url=f"t.me/WINZOGOLDFINEL")
+                        text="⚡️ My Group",
+                        url=f"t.me/WINZOGOLD7773")
 
                 ]                             
             ]
@@ -291,8 +291,8 @@ async def play(_, message: Message):
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="My Group",
-                        url=f"t.me/WINZOGOLDFINEL")
+                        text="⚡️ My Group",
+                        url=f"t.me/WINZOGOLD7773")
 
                 ]                             
             ]
