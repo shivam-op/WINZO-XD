@@ -196,14 +196,14 @@ async def play(_, message: Message):
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="🙋‍♂ Chatting Group",
-                        url=f"t.me/friends_forever_143")
+                        text="🙋‍♂ My Channel",
+                        url=f"t.me/WINZOGOLDFINEL")
 
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ Close",
-                        callback_data='cls')
+                        text="My Group",
+                        url=f"t.me/WINZOGOLDFINEL")
 
                 ]                             
             ]
@@ -223,14 +223,14 @@ async def play(_, message: Message):
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="🙋‍♂ Chatting Group",
-                        url=f"t.me/friends_forever_143")
+                        text="🙋‍♂ My Channel",
+                        url=f"t.me/WINZOGOLDFINEL")
 
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ Close",
-                        callback_data='cls')
+                        text="My Group",
+                        url=f"t.me/WINZOGOLDFINEL")
 
                 ]                             
             ]
@@ -285,14 +285,14 @@ async def play(_, message: Message):
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="🙋‍♂ Chatting Group",
-                        url=f"t.me/friends_forever_143")
+                        text="🙋‍♂ My Channel",
+                        url=f"t.me/WINZOGOLDFINEL")
 
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ Close",
-                        callback_data='cls')
+                        text="My Group",
+                        url=f"t.me/WINZOGOLDFINEL")
 
                 ]                             
             ]
