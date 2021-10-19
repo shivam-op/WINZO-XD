@@ -187,30 +187,52 @@ async def play(_, message: Message):
                 secmul *= 60
                 
             keyboard = InlineKeyboardMarkup(
-                            [
+            [   
+                [
+                               
+                    InlineKeyboardButton('💬 Support', url='t.me/electrobot_support'),
+                    InlineKeyboardButton('💡 Updates', url='t.me/electro_updates')
+                
+                ],                     
                 [
                     InlineKeyboardButton(
-                        "𝐂𝐇𝐀𝐍𝐍𝐄𝐋🇮🇳", url="https://t.me/ELECTRO_UPDATES")
-                  ],[ 
+                        text="🙋‍♂ Chatting Group",
+                        url=f"t.me/friends_forever_143")
+
+                ],
+                [       
                     InlineKeyboardButton(
-                        "𝐆𝐑𝐎𝐔𝐏", url="https://t.me/ELECTROBOT_UPDATES"
-                    )]
+                        text="❌ Close",
+                        callback_data='cls')
+
+                ]                             
             ]
         )
-        except Exception as e:
+            Exception as e:
             title = "NaN"
             thumb_name = "https://telegra.ph/file/e7f13a1e796554fba1fe2.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
-                            [
+            [   
+                [
+                               
+                    InlineKeyboardButton('💬 Support', url='t.me/electrobot_support'),
+                    InlineKeyboardButton('💡 Updates', url='t.me/electro_updates')
+                
+                ],                     
                 [
                     InlineKeyboardButton(
-                        "GROUP🇮🇳", url="https://t.me/ELECTROBOT_SUPPORT")
-                  ],[ 
+                        text="🙋‍♂ Chatting Group",
+                        url=f"t.me/friends_forever_143")
+
+                ],
+                [       
                     InlineKeyboardButton(
-                        "CHANNEL", url="https://t.me/ELECTRO_UPDATES"
-                    )]
+                        text="❌ Close",
+                        callback_data='cls')
+
+                ]                             
             ]
         )
         if (dur / 60) > DURATION_LIMIT:
@@ -254,14 +276,25 @@ async def play(_, message: Message):
             return
 
         keyboard = InlineKeyboardMarkup(
-                            [
+            [   
+                [
+                               
+                    InlineKeyboardButton('💬 Support', url='t.me/electrobot_support'),
+                    InlineKeyboardButton('💡 Updates', url='t.me/electro_updates')
+                
+                ],                     
                 [
                     InlineKeyboardButton(
-                        "GROUP🇮🇳", url="https://t.me/ELECTROBOT_SUPPORT")
-                  ],[ 
+                        text="🙋‍♂ Chatting Group",
+                        url=f"t.me/friends_forever_143")
+
+                ],
+                [       
                     InlineKeyboardButton(
-                        "CHANNEL", url="https://t.me/ELECTRO_UPDATES"
-                    )]
+                        text="❌ Close",
+                        callback_data='cls')
+
+                ]                             
             ]
         )
         
@@ -285,7 +318,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="✯𝗩𝗖✯▶️ **Playing** here the song requested by {} 😜".format(
+        caption="▶️ **Playing** here the song requested by {} 😜".format(
         message.from_user.mention()
         ),
     )
