@@ -76,18 +76,27 @@ async def play(client: Client, message_: Message):
 
         file_path =await convert(download(url))
 
-    if message_.chat.id in callsmusic.pytgcalls.active_calls:
-        position = await queues.put(message_.chat.id, file_path)
-        await res.edit_text(f"#️⃣ Queued at position {position}.")
+    if message.chat.id in callsmusic.pytgcalls.active_calls:
+        position = await queues.put(message.chat.id, file=file_path)
+        await message.reply_photo(
+        photo="final.png", 
+        caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**#⃣ Queued Position:** {}".format(
+        title, duration, message.from_user.mention(), position
+        ),
+        reply_markup=keyboard)
+        os.remove("final.png")
+        return await lel.delete()
     else:
-        await res.edit_text("▶️ Playing...")
-        res.delete
-        m = await client.send_photo(
-        chat_id=message_.chat.id,
-        photo="https://telegra.ph/file/fe07b15733ed56f103cb4.jpg",
-        caption=f"Playing Your song Via Devil music bot.",
-         ) 
-        callsmusic.pytgcalls.join_group_call(message_.chat.id, file_path)
+        callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
+        await message.reply_photo(
+        photo="final.png",
+        reply_markup=keyboard,
+        caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**▶️ Now Playing at `{}`...**".format(
+        title, duration, message.from_user.mention(), message.chat.title
+        ), )
+        os.remove("final.png")
+        return await lel.delete()
+
 
 @Client.on_message(
     filters.command("deezer")
