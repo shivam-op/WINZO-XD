@@ -20,7 +20,7 @@ Add me in your group and play music freely.🇮🇳**
             [
                 [
                     InlineKeyboardButton(
-                        " Winzo Official", url="https://t.me/WINZOGOLD7773")
+                        "⚡️ Winzo Official", url="https://t.me/WINZOGOLD7773")
                   ],[
                     InlineKeyboardButton(
                         "🔊 Channel", url="https://t.me/ELECTRO_UPDATES"
