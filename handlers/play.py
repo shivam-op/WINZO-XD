@@ -276,9 +276,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**#⃣ Queued Position:** {}".format(
-        title, duration, message.from_user.mention(), position
-        ),
+        caption=f"#⃣ Your requested song **queued** at position {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -287,8 +285,9 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**▶️ Now Playing at `{}`...**".format(
-        title, duration, message.from_user.mention(), message.chat.title
-        ), )
+        caption="✯𝗩𝗖✯▶️ **Playing** here the song requested by {} 😜".format(
+        message.from_user.mention()
+        ),
+    )
         os.remove("final.png")
         return await lel.delete()
